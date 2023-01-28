@@ -7,14 +7,14 @@
 <script>
 export default {
     props: {
-        chatId: {
-            type: String,
-            default: ``
-        }
+    chatId: {
+        type: String,
+        default: ''
+    }
     },
     data() {
-        return {
-            messages: [
+    return {
+        messages: [
             { id: 1, text: 'Mensaje 1', author: 1 },
             { id: 2, text: 'Mensaje 2', author: 2 },
             { id: 3, text: 'Mensaje 3', author: 3 },

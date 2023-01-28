@@ -1,15 +1,12 @@
-<script>
-export default {
-  data() {
-    return {
-      username: ''
-    }
-  },
-  methods: {
-    iniciar() {
-      this.$router.replace('/chats')
-    }
-  }
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+const username = ref()
+
+const router = useRouter()
+
+function iniciar() {
+  router.push({ name: 'about' })
 }
 </script>
 
@@ -20,3 +17,4 @@ export default {
     <button @click="iniciar">Iniciar sesion</button>
   </main>
 </template>
+

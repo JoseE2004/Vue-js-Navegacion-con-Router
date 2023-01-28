@@ -1,6 +1,5 @@
 <template>
-    <h1>Sesion</h1>
+    <h1>Session</h1>
     <router-view />
     <router-view name="register" />
 </template>
-

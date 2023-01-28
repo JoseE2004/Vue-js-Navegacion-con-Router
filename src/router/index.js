@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     //{ path: '/home', redirect: {name: 'home'}},
     { path: '/',name: 'home', component: HomeView, alias: '/home' },
@@ -24,10 +24,18 @@ const router = createRouter({
       path: '/chats', 
       component: () => import('../views/ChatsView.vue'), 
       children: [
-      { path: ':chatId', component: () => import('../views/ChatView.vue') }
-      ]
-    }
-  ]
+      { 
+        path: ':chatId', 
+        component: () => import('../views/ChatView.vue'),
+        props:  (router) => {
+          return {
+            chatId: router.params.chatId
+          }
+        }
+      }
+    ]
+  }
+]
 })
 
 export default router
